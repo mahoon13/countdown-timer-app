@@ -18,7 +18,7 @@ body {
 
 #main {
     height: 100vh;
-    background: url("/images/bg-stars.svg");
+    background: url("../images/bg-stars.svg");
     background-size: contain;
     background-position: right;
 
@@ -98,7 +98,7 @@ footer {
     bottom: 0;
     width: 100%;
     height: 230px;
-    background: url("/images/pattern-hills.svg") bottom;
+    background: url("../images/pattern-hills.svg") bottom;
     background-repeat: repeat-x;
     background-size: cover;
     padding-bottom: 1rem;
