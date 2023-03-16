@@ -1,0 +1,192 @@
+@import "./reset.css";
+
+:root {
+    --grayish-blue: hsl(237, 18%, 59%);
+    --soft-red: hsl(345, 95%, 68%);
+    --dark-desaturated-blue: hsl(236, 21%, 26%);
+    --very-dark-blue: hsl(235, 16%, 14%);
+    --very-darker-blue: hsl(234, 17%, 12%);
+    --desaturated-blue: hsl(240, 21%, 22%);
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--very-dark-blue);
+    color: white;
+}
+
+#main {
+    height: 100vh;
+    background: url("/images/bg-stars.svg");
+    background-size: contain;
+    background-position: right;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+    padding-top: 6rem;
+}
+
+#main h1 {
+    letter-spacing: 8px;
+    text-transform: uppercase;
+}
+
+#timer {
+    display: flex;
+    gap: 3rem;
+}
+
+.time__box {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    width: 10rem;
+}
+
+.time__box .time {
+    font-size: 6rem;
+    line-height: 5rem;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    color: var(--soft-red);
+    position: relative;
+    z-index: 50;
+    border-radius: .5rem;
+    overflow: hidden;
+    padding: 2rem 0;
+    background: linear-gradient(var(--desaturated-blue) 50%, var(--dark-desaturated-blue) 50%);
+    box-shadow: 0 .5rem 5px 0 var(--very-darker-blue);
+}
+
+.time__box .time::before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    border-radius: 9999px;
+    position: absolute;
+    top: calc(50% - 6px);
+    left: -6px;
+    background-color: var(--very-dark-blue);
+}
+
+.time__box .time::after {
+    content: "";
+    width: 12px;
+    height: 12px;
+    border-radius: 9999px;
+    position: absolute;
+    top: calc(50% - 6px);
+    right: -6px;
+    background-color: var(--very-dark-blue);
+}
+
+.time__box .label {
+    letter-spacing: 5px;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--grayish-blue);
+    text-transform: uppercase;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 230px;
+    background: url("/images/pattern-hills.svg") bottom;
+    background-repeat: repeat-x;
+    background-size: cover;
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    gap: 4rem;
+}
+
+#social__group {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+#social__group .social__box {
+    cursor: pointer;
+}
+
+#social__group .social__box path {
+    transition: .3s linear;
+}
+
+#social__group .social__box:hover path {
+    fill: var(--soft-red);
+}
+
+footer .attribution a {
+    color: var(--soft-red);
+}
+
+@media (max-width: 1040px) {
+    * {
+        font-size: 12px;
+    }
+
+    #main {
+        gap: 3rem;
+    }
+
+    .time__box {
+        gap: 1.5rem;
+    }
+
+    .time__box .time {
+        line-height: 4.5rem;
+    }
+
+    footer {
+        height: 180px;
+        gap: 3rem;
+    }
+}
+
+@media (max-width: 600px) {
+    * {
+        font-size: 10px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    #main {
+        padding-top: 10rem;
+        min-height: calc(100vh - 80px);
+        text-align: center;
+    }
+
+    #timer {
+        gap: 1rem;
+    }
+
+    .time__box {
+        width: 7.5rem;
+    }
+
+    .time__box .time {
+        font-size: 4.5rem;
+        line-height: 3.5rem;
+    }
+
+    .time__box .label {
+        font-size: .7rem;
+    }
+
+    footer {
+        height: 150px;
+    }
+}
